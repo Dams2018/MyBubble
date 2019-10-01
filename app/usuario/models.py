@@ -17,7 +17,7 @@ class Avatar(models.Model):
 
 class Usuario(models.Model):
     idUsuario=models.AutoField(primary_key=True)
-    run=models.CharField(max_length=12, default= 1)  
+    run=models.CharField(max_length=12, default= '19.318.877-k')  
     nombre = models.CharField(max_length=25)
     apaterno = models.CharField(max_length=25)
     apmaterno = models.CharField(max_length=25)
