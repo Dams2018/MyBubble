@@ -17,7 +17,7 @@ class Avatar(models.Model):
 
 class Usuario(models.Model):
     idUsuario=models.AutoField(primary_key=True)
-    run=models.CharField(max_length=12)
+    run=models.CharField(max_length=12, default= 1)  
     nombre = models.CharField(max_length=25)
     apaterno = models.CharField(max_length=25)
     apmaterno = models.CharField(max_length=25)
@@ -25,13 +25,13 @@ class Usuario(models.Model):
     activo = models.BooleanField(default = True)
     puntos = models.IntegerField(default = 0)
     idTipoUsuario = models.ForeignKey(Tipo_Usuario, null = True, blank = True, on_delete = models.DO_NOTHING)
-    idAvatar = models.ForeignKey(Avatar, null = True, Blank = True, on_delete = models.DO_NOTHING)
-    idCurso = models.ForeignKey(Curso, null = True, Blank = True, on_delete = models.DO_NOTHING)
+    idAvatar = models.ForeignKey(Avatar, null = True, blank = True, on_delete = models.DO_NOTHING)
+    idCurso = models.ForeignKey(Curso, null = True, blank = True, on_delete = models.DO_NOTHING)
 
 class Comentario(models.Model):
     idComentario = models.AutoField(primary_key = True)
     titulo = models.CharField(max_length= 20)
     descripcion = models.CharField(max_length = 250)
-    idUsuario = models.ForeignKey(Usuario, null = True, Blank = True, on_delete = models.DO_NOTHING)
+    idUsuario = models.ForeignKey(Usuario, null = True, blank = True, on_delete = models.DO_NOTHING)
 
 
