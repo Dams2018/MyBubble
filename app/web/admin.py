@@ -1,6 +1,6 @@
 from django.contrib import admin
 # importando base de datos
-from app.usuario.models import Usuario, Tipo_Usuario, Avatar, Comentario, Curso, Asignatura, Pregunta, Respuesta, Puente
+from app.web.models import Usuario, Tipo_Usuario, Avatar, Comentario, Curso, Asignatura, Pregunta, Respuesta, Puente
 # Register your models here.
 
 
