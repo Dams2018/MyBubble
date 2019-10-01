@@ -17,7 +17,7 @@ class Avatar(models.Model):
 
 class Usuario(models.Model):
     idUsuario=models.AutoField(primary_key=True)
-    run=models.CharField(max_length=12, default= '19.318.877-k')  
+    run=models.CharField(max_length=12)  
     nombre = models.CharField(max_length=25)
     apaterno = models.CharField(max_length=25)
     apmaterno = models.CharField(max_length=25)
@@ -34,4 +34,26 @@ class Comentario(models.Model):
     descripcion = models.CharField(max_length = 250)
     idUsuario = models.ForeignKey(Usuario, null = True, blank = True, on_delete = models.DO_NOTHING)
 
+class Asignatura(models.Model):
+    idAsignatura=models.CharField(max_length=20, primary_key=True)
+    nombreAsigantura=models.CharField(max_length=15)
+    activo=models.BooleanField(default=True)
+    idcurso=models.ForeignKey(Curso, null=True, blank=True, on_delete= models.DO_NOTHING)
 
+class Pregunta(models.Model):
+    id_Pregunta=models.AutoField(primary_key=True)
+    pregunta=models.CharField(max_length=100)
+    activopregunta=models.BooleanField(default=True)
+
+class Respuesta(models.Model):
+    id_Respuesta=models.AutoField(primary_key=True)
+    respuestas=models.CharField(max_length=100)
+    correcta=models.BooleanField(default=False)
+    id_Pregunta=models.ForeignKey(Pregunta, null=True, blank=True, on_delete= models.DO_NOTHING)
+    idUsuario = models.ForeignKey(Usuario, null = True, blank = True, on_delete = models.DO_NOTHING)
+
+
+class Puente(models.Model):
+    id_Pregunta=models.ForeignKey(Pregunta, null=True, blank=True, on_delete= models.DO_NOTHING)
+    idUsuario = models.ForeignKey(Usuario, null = True, blank = True, on_delete = models.DO_NOTHING)
+    id_Respuesta = models.ForeignKey(Respuesta, null = True, blank = True, on_delete = models.DO_NOTHING)
