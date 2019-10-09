@@ -23,18 +23,7 @@ database=firebase.database()
 def signIn(request):
     return render(request,"index.html")
 
-def postsign(request):
-    email=request.POST.get('email')
-    passw = request.POST.get("pass")
-    try:
-        user = authe.sign_in_with_email_and_password(email,passw)
-    except:
-        message="Error de Credencial"
-        return render(request,"index.html",{"messg":message})
-    print(user['idToken'])
-    session_id=user['idToken']
-    request.session['uid']=str(session_id)
-    return render(request, "inicio.html",{"e":email})
+
 
 def Logout(request):
     auth.logout(request)
@@ -65,3 +54,24 @@ def postsignup(request):
         message="La cuenta ya existe"
         return render(request,"index.html",{"messg":message})
     return render(request,"index.html")
+
+def postsign(request):
+    email=request.POST.get('email')
+    passw = request.POST.get("pass")
+    try:
+        user = authe.sign_in_with_email_and_password(email,passw)
+    except:
+        message="Error de Credencial"
+        return render(request,"index.html",{"messg":message})
+    print(user['idToken'])
+    session_id=user['idToken']
+    request.session['uid']=str(session_id)
+
+    idtoken = request.session['uid']
+    a = authe.get_account_info(idtoken)
+    a = a['users']
+    a = a[0]
+    a = a['localId']
+    
+    name = database.child('users').child(a).child('details').child('name').get().val()
+    return render(request, "inicio.html",{"e":email,'i':name})
