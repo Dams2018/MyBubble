@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{% include "nav.html" %}
+<body>
+    <div id="asignatura" class="container" >
+
+        <div class="card text-white bg-primary mb-3 text-center">
+          <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">Matemáticas</a></div>
+            <div class="card-body">
+                <blockquote class="card-blockquote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </blockquote>
+            </div>
+        </div>
+
+      <div class="card text-white bg-danger mb-3 text-center">
+          <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">Lenguaje</a></div>
+            <div class="card-body">
+                <blockquote class="card-blockquote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </blockquote>
+            </div>
+        </div>
+
+       <div class="card text-white bg-info mb-3 text-center">
+          <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">Inglés</a></div>
+            <div class="card-body">
+                <blockquote class="card-blockquote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </blockquote>
+            </div>
+      </div>
+
+       <div class="card text-white bg-warning mb-3 text-center">
+          <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">Ciencias</a></div>
+            <div class="card-body">
+                <blockquote class="card-blockquote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </blockquote>
+            </div>
+      </div>
+
+
+       <div class="card text-white bg-success mb-3 text-center">
+          <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">Historia</a></div>
+            <div class="card-body">
+                <blockquote class="card-blockquote">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star"></span>
+                    <span class="fa fa-star"></span>
+                </blockquote>
+            </div>
+      </div>
+
+    </div>
+
+</body>
+
+</html>
+
+{% include "notificaciones.html" %}
+
+{% endblock content %}
+

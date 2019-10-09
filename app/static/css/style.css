@@ -1,0 +1,50 @@
+body{
+    margin: 0px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:white;
+    color: white;
+    text-align: center;
+}
+
+#colorfooter{
+    color: gray
+}
+
+
+
+
+.left{
+    margin-left: 10px;
+    float: left;
+}
+
+.right{
+    margin-left: 10px;
+    float: right;
+}
+
+.center {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 50%;
+}
+
+.center2 {
+    
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+

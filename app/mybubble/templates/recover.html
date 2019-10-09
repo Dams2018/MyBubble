@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  <img  src="{% static 'img/logo.webp' %}" class="img-fluid w-80 center col-xs-10 col-md-8"  alt="Responsive image" >
+  <p><p>
+  <div class="container center2 col-xs-12 col-sm-4 sticky-top "  >
+
+
+    <form action="/recover/" method="post">
+    {% csrf_token %}
+        <div class="form-group  " >
+            <label for="correo"></label>
+            <input id="email" type="email" class="form-control"  name="email" placeholder="Correo">
+        </div>
+
+    
+
+        <button type="submit" class="btn btn-block btn-primary" >Recuperar</button>
+    </form>
+    <p><p>
+
+</div>
+{% include "footer.html" %}
+
+{% endblock content %}
+
+
+
+
+          

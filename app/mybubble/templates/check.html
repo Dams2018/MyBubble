@@ -1,0 +1,11 @@
+
+<!-- Mensaje de errores -->
+{% if messg %}
+<script>
+Swal.fire({
+  type: 'error',
+  title: 'Oops...',
+  text: '{{messg}}',
+})
+</script>
+{% endif %}

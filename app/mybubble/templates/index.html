@@ -1,0 +1,49 @@
+
+{% extends 'base.html' %}
+{% load static %}
+ 
+ 
+
+{% block content %}
+
+{% include 'check.html' %}
+
+<img  src="{% static 'img/logo.webp' %}" class="img-fluid w-80 center col-xs-10 col-md-8"  alt="Responsive image" >
+  <p><p>
+  <div class="container center2 col-xs-12 col-sm-4 sticky-top "  >
+
+
+    <form action="/postsign/" method="post">
+    {% csrf_token %}
+        <div class="form-group  " >
+            <label for="correo"></label>
+            <input id="email" type="email" class="form-control"  name="email" placeholder="Correo">
+        </div>
+        <div class="form-group">
+            <label class="left" for="pass"></label>
+            <input id="pass" type="password" class="form-control" name="pass" placeholder="Contraseña">
+        </div>
+
+        <div >
+            <a href="{% url 'recover' %}" ><p class="text-left small">¿Olvidaste el correo electrónico?</p></a>
+        </div>
+
+        
+
+
+        <button type="submit" class="btn btn-block btn-primary" >Ingresar</button>
+    </form>
+    <p><p>
+
+<div class="container center2 " >
+    <button onclick="location.href='{%url 'signup'%}'" class="btn btn-block btn-link" >Crear Cuenta</button>
+</div>
+<p><p>
+
+</div>
+{% include "footer.html" %}
+
+{% endblock content %}
+
+
+
