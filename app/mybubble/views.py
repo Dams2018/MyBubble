@@ -69,6 +69,7 @@ def postsign(request):
         message="Error de Credencial"
         return render(request,"index.html",{"messg":message})
     print(user['idToken'])
+
     session_id=user['idToken']
     request.session['uid']=str(session_id)
 
@@ -83,6 +84,7 @@ def postsign(request):
     name = database.child('users').child(a).child('details').child('name').get().val()
     asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val() 
     print(asy)
+
     return render(request, "inicio.html",{"e":email,'i':name,'asy':asy})
 
 
@@ -101,4 +103,14 @@ def lol(a):
 
 
 def calendario(request):
+    try:
+        idtoken = request.session['uid']
+        a = authe.get_account_info(idtoken)
+        a = a['users']
+        a = a[0]
+        a = a['localId']
+        print(idtoken)
+    except:
+        message="Dolor"
+        return render(request,"index.html",{"messg":message})
     return render(request, 'calendario.html', {})
