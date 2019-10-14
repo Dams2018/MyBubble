@@ -102,6 +102,20 @@ def lol(a):
     database.child('users').child(a).child('asignatura').child('asy').set(data)
 
 
+
+# achiccar el codigo para que no se repita pero lo vere despues mientras lo are de la manera que no se debe
+def comprobar(idtoken):
+
+    idtoken = request.session['uid']
+    a = authe.get_account_info(idtoken)
+    a = a['users']
+    a = a[0]
+    a = a['localId']
+    print(idtoken)
+
+
+
+
 def calendario(request):
     try:
         idtoken = request.session['uid']
@@ -114,3 +128,22 @@ def calendario(request):
         message="Dolor"
         return render(request,"index.html",{"messg":message})
     return render(request, 'calendario.html', {})
+
+
+def micuenta(request):
+    try:
+        idtoken = request.session['uid']
+        a = authe.get_account_info(idtoken)
+        a = a['users']
+        a = a[0]
+        a = a['localId']
+        print(idtoken)
+        
+    except:
+        message="Dolor"
+        return render(request,"index.html",{"messg":message})
+
+    name = database.child('users').child(a).child('details').child('name').get().val()
+    return render(request, 'micuenta.html', {'nombre':name})
+
+    

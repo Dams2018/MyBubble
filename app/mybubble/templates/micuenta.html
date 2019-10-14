@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+
+
+{% load static %}
+{% block content %}
+    {% csrf_token %}
+{% include "nav.html" %}
+<body>
+
+hola {{nombre}}
+</body>
+
+
+
+
+
+
+{% endblock content %}
+

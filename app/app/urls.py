@@ -29,5 +29,8 @@ urlpatterns = [
     path('register/',views.registro, name='signup'),
     path('postsignup/',views.postsignup, name='postsignup'),
     path('calendario/',views.calendario, name='calendario'),
+    path('micuenta/',views.micuenta, name='micuenta'),
+    
+    
 ]
 
