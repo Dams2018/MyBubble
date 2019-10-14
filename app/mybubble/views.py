@@ -40,6 +40,7 @@ def recover(request):
     return render(request, 'recover.html', {})
 
 
+
 def postsignup(request):
     name=request.POST.get('name')
     lastname=request.POST.get('lastname')
@@ -54,6 +55,10 @@ def postsignup(request):
         message="La cuenta ya existe"
         return render(request,"index.html",{"messg":message})
     return render(request,"index.html")
+
+
+
+
 
 def postsign(request):
     email=request.POST.get('email')
@@ -72,6 +77,24 @@ def postsign(request):
     a = a['users']
     a = a[0]
     a = a['localId']
-    
+    lol(a)
+
+
     name = database.child('users').child(a).child('details').child('name').get().val()
-    return render(request, "inicio.html",{"e":email,'i':name})
+    asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val() 
+    print(asy)
+    return render(request, "inicio.html",{"e":email,'i':name,'asy':asy})
+
+
+
+
+
+def lol(a):
+    data = {
+        "Asignatura1":"Lenguaje",
+        "Asignatura2":"Matematicas",
+        "Asignatura3":"Naturales",
+        "Asignatura4":"Historia",
+        "Asignatura5":"Ingles"
+    }
+    database.child('users').child(a).child('asignatura').child('asy').set(data)

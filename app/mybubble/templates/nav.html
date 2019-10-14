@@ -1,3 +1,6 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
 <header>
     <nav class="navbar navbar-expand-lg navbar-light navbar-dark bg-primary fixed-top">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,7 +26,7 @@
         </div>
 
         <div class="dropdown" id="cuenta">
-                <img src="img/user.png"
+                <img src="{% static 'img/user.png' %}"
                 alt="..." style='width:40px; height:40px' class="rounded-circle shadow " 
                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                 class="btn btn-success dropdown-toggle" role="button">
@@ -40,6 +43,10 @@
       </nav>
 </header>
 
-    hola {{e}}
+
+
+    {% endblock content %}
+
+{% comment %}         hola {{e}}
         hola {{i}}
-    <button type="button" onclick="location.href='{%url 'log'%}'"  >salir</button>
+    <button type="button" onclick="location.href='{%url 'log'%}'"  >salir</button> {% endcomment %}
