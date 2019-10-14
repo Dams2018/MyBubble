@@ -13,7 +13,7 @@
               <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="calendario.html">Calendario</a>
+              <a class="nav-link" href="{% url 'calendario' %}">Calendario</a>
             </li>
             <li class="nav-item">
                     <a class="nav-link" href="comunidad.html">Comunidad</a>
@@ -47,6 +47,3 @@
 
     {% endblock content %}
 
-{% comment %}         hola {{e}}
-        hola {{i}}
-    <button type="button" onclick="location.href='{%url 'log'%}'"  >salir</button> {% endcomment %}

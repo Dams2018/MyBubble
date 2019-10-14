@@ -1,5 +1,7 @@
+
 body{
     margin: 0px;
+
 }
 
 footer {
@@ -48,3 +50,37 @@ footer {
     margin-bottom: auto;
 }
 
+
+
+#logo{
+
+    margin-top: 200px;
+    background-repeat: no-repeat;
+    background-size: cover ;
+    position: center ;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.dropdown-menu-right { 
+    right: 0; 
+
+}
+
+#asignatura{
+    margin-top: 100px;
+}
+
+#cuenta{
+    margin: auto;
+    margin-right: 0px;
+}
+
+.checked {
+    color: orange;
+}
+
+.temp{
+    margin-top: 150px;
+}

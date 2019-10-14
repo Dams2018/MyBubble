@@ -98,3 +98,7 @@ def lol(a):
         "Asignatura5":"Ingles"
     }
     database.child('users').child(a).child('asignatura').child('asy').set(data)
+
+
+def calendario(request):
+    return render(request, 'calendario.html', {})

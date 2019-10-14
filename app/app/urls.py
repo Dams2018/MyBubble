@@ -28,5 +28,6 @@ urlpatterns = [
     path('logout/',views.Logout, name="log"),
     path('register/',views.registro, name='signup'),
     path('postsignup/',views.postsignup, name='postsignup'),
+    path('calendario/',views.calendario, name='calendario'),
 ]
 
