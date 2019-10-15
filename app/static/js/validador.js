@@ -1,61 +1,5 @@
-$(document).ready(function(){
-    $("#entrar").validate({
-        errorClass: "is-invalid", 
-        rules:{
-            correo:{
-                email:true,
-                required:true
-            },
-            pass:{
-                password:true,
-                required:true
-            }
 
-
-        },
-
-        
-    })
-})
-
-emailv();
-passv();
-
-
-function emailv(){
-//email jqueryvalidador
-console.log("holi")
-$("#emailform").validate({
-    errorClass: "is-invalid", 
-    rules:{
-        correo:{
-            email:true,
-            required:true
-        },
-    },
-
-    
-})
-}
-
-function passv(){
-    //pass jqueryvalidador
-    console.log("holi")
-    $("#passform").validate({
-        errorClass: "is-invalid", 
-        rules:{
-            pass:{
-                required:true
-        },  },
-    
-        
-    })
-}
-
-
-function doSomething() {    
-     _validator.element($('#pass'));
-}
+entrar();
 
 $(document).ready(function() {
     jQuery.extend(jQuery.validator.messages, {
@@ -81,21 +25,23 @@ $(document).ready(function() {
 
 
 
-//validacion password vacio
-function validacionPass() {  
-    var pass= document.getElementById('pass').value;
+function entrar(){
+//email jqueryvalidador
+console.log("CamposObligatorios")
+$("#entrar").validate({
+    errorClass: "is-invalid", 
+    rules:{
+        email:{
+            email:true,
+            required:true
+        },
+        pass:{
+            required:true
 
-    if($(pass).val().length < 1) {  
-
-        Swal.fire({
-            type: 'error',
-            title: 'Oops...',
-            text: 'El campo de la contraseña está vacío',
-          });  
-        return false;  
-    }  
-    return true;  
-};
+        },
+    },  
+})
+}
 
 
 //validacion correo 
@@ -113,11 +59,8 @@ $("#entrar").submit(function () {
 
 //validacion correo vacio
 $("#entrar").submit(function(){
-    console.log("enviar")
 
     if($("#email").val().length = 0 || $("#email").val().length < 1){
-        console.log("valido")
-        console.log("no valido")
         Swal.fire({
             type: 'error',
             title: 'Oops...',
@@ -127,4 +70,25 @@ $("#entrar").submit(function(){
     }
 
 })
+
+
+
+//validacion password vacio
+$("#entrar").submit(function () {  
+    var pass= document.getElementById("pass").value;
+
+    if(pass.length < 1) {  
+
+        Swal.fire({
+            type: 'error',
+            title: 'Oops...',
+            text: 'El campo de la contraseña está vacío',
+          });  
+        return false;  
+    }  
+    return true;  
+
+});  
+
+
 

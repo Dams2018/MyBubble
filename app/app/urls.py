@@ -30,7 +30,9 @@ urlpatterns = [
     path('postsignup/',views.postsignup, name='postsignup'),
     path('calendario/',views.calendario, name='calendario'),
     path('micuenta/',views.micuenta, name='micuenta'),
-    path('inicio/',views.inicio, name='inicio'),   
+    path('inicio/',views.inicio, name='inicio'),
+    path('recuperar/',views.recuperar, name='recuperar'),    
+    
     
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

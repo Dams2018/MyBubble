@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from pyrebase import pyrebase
 from django.contrib import auth
+from django.contrib.auth import authenticate, logout, login
 
 
 # Firebase
@@ -40,6 +41,13 @@ def recover(request):
     return render(request, 'recover.html', {})
 
 
+def recuperar(request):
+    email=request.POST.get('email')
+    authe.send_password_reset_email(email)
+    return render(request, 'index.html', {})
+
+
+    
 
 def postsignup(request):
     name=request.POST.get('name')
@@ -51,9 +59,12 @@ def postsignup(request):
         uid= user['localId']
         data={"name":name,"lastname":lastname,"status":"1"}
         database.child("users").child(uid).child("details").set(data)
+        
     except:
         message="La cuenta ya existe"
         return render(request,"index.html",{"messg":message})
+
+    authe.send_email_verification(user['idToken'])
     return render(request,"index.html")
 
 
@@ -63,6 +74,7 @@ def postsignup(request):
 def postsign(request):
     email=request.POST.get('email')
     passw = request.POST.get("pass")
+
     try:
         user = authe.sign_in_with_email_and_password(email,passw)
     except:
@@ -79,6 +91,7 @@ def postsign(request):
     a = a[0]
     a = a['localId']
     lol(a)
+
 
 
    
