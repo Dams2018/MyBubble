@@ -11,7 +11,7 @@ urlpatterns = [
     path('recover', recover, name="recover"),
     path('calendario', LoginView.as_view(), name='calendario'),
     path('micuenta', LoginView.as_view(), name='micuenta'),
-    
+    path('inicio', LoginView.as_view(), name='inicio'),
 
     
 

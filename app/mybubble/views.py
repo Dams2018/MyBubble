@@ -81,11 +81,11 @@ def postsign(request):
     lol(a)
 
 
-    name = database.child('users').child(a).child('details').child('name').get().val()
+   
     asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val() 
     print(asy)
 
-    return render(request, "inicio.html",{"e":email,'i':name,'asy':asy})
+    return render(request, "load.html",{'asy':asy})
 
 
 
@@ -146,4 +146,20 @@ def micuenta(request):
     name = database.child('users').child(a).child('details').child('name').get().val()
     return render(request, 'micuenta.html', {'nombre':name})
 
+
+def inicio(request):
+    try:
+        idtoken = request.session['uid']
+        a = authe.get_account_info(idtoken)
+        a = a['users']
+        a = a[0]
+        a = a['localId']
+        print(idtoken)
+        
+    except:
+        message="Dolor"
+        return render(request,"index.html",{"messg":message})
     
+    asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val()
+    return render(request, 'inicio.html', {'asy':asy})
+  

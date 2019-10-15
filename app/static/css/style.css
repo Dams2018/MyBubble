@@ -1,6 +1,6 @@
 
 body{
-    margin: 0px;
+    margin: 10px;
 
 }
 
@@ -19,7 +19,9 @@ footer {
 }
 
 
-
+h1{
+    color: brown;
+}
 
 .left{
     margin-left: 10px;
@@ -69,7 +71,7 @@ footer {
 }
 
 #asignatura{
-    margin-top: 100px;
+    margin-top: 0px;
 }
 
 #cuenta{
