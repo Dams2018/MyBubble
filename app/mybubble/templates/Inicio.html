@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 
 
-
-{% load static %}
 {% block content %}
-    {% csrf_token %}
+
 {% include "nav.html" %}
+
 
 <body>
 
-    <h1>hola</h1>
-    <div id="asignatura" class="container" >
+
+    <div id="espacio" class="container" >
 
         <div class="card text-white bg-primary mb-3 text-center">
           <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{asy}}</a></div>
