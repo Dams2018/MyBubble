@@ -92,13 +92,7 @@ def postsign(request):
     a = a['localId']
     lol(a)
 
-
-
-   
-    asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val() 
-    print(asy)
-
-    return render(request, "load.html",{'asy':asy})
+    return render(request, "load.html",{})
 
 
 
@@ -117,7 +111,7 @@ def lol(a):
 
 
 # achiccar el codigo para que no se repita pero lo vere despues mientras lo are de la manera que no se debe
-def comprobar(idtoken):
+def comprobar():
 
     idtoken = request.session['uid']
     a = authe.get_account_info(idtoken)
@@ -173,6 +167,13 @@ def inicio(request):
         message="Dolor"
         return render(request,"index.html",{"messg":message})
     
-    asy = database.child('users').child(a).child('asignatura').child('asy').child('Asignatura1').get().val()
-    return render(request, 'inicio.html', {'asy':asy})
+    asy = database.child('users').child(a).child('asignatura').child('asy').get()
+    my_list = []
+    for user in asy.each():
+       # print(user.key()) # Asignatura
+        #print(user.val()) # nombre se asignatura
+        my_list.append(user.val())
+    print(my_list)   
+    
+    return render(request, 'inicio.html', {'asy': my_list})
   
