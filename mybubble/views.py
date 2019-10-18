@@ -175,5 +175,5 @@ def inicio(request):
         my_list.append(user.val())
     print(my_list)   
     
-    return render(request, 'inicio.html', {'asy': my_list})
+    return render(request, 'Inicio.html', {'asy': my_list})
   
