@@ -12,8 +12,25 @@
 
 {% for m in asy %}
 
-            <div class="card text-white bg-primary mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>
+
+  {% if m == 'Lenguaje' %}
+        <div class="card text-white bg-danger mb-3 text-center">
+        <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{m}}</a></div>
+    {% elif m == 'Matematicas' %}
+        <div class="card text-white bg-primary mb-3 text-center">
+        <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>
+    {% elif m == 'Ingles' %}
+       <div class="card text-white bg-info mb-3 text-center">
+       <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{m}}</a></div>
+    {% elif m == 'Naturales' %}
+        <div class="card text-white bg-warning mb-3 text-center">
+        <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{m}}</a></div>
+    {% elif m == 'Historia' %}
+       <div class="card text-white bg-success mb-3 text-center">
+        <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{m}}</a></div>
+  {% else %}
+    <div class="card text-white bg-primary mb-3 text-center">
+  {% endif %}
             <div class="card-body">
                 <blockquote class="card-blockquote">
                     <span class="fa fa-star checked"></span>
@@ -26,75 +43,7 @@
         </div>
 {% endfor %}
 
-    <div id="espacio" class="container" >
 
-        <div class="card text-white bg-primary mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{asy}}</a></div>
-            <div class="card-body">
-                <blockquote class="card-blockquote">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </blockquote>
-            </div>
-        </div>
-
-      <div class="card text-white bg-danger mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">Lenguaje</a></div>
-            <div class="card-body">
-                <blockquote class="card-blockquote">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </blockquote>
-            </div>
-        </div>
-
-       <div class="card text-white bg-info mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">Inglés</a></div>
-            <div class="card-body">
-                <blockquote class="card-blockquote">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </blockquote>
-            </div>
-      </div>
-
-       <div class="card text-white bg-warning mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">Ciencias</a></div>
-            <div class="card-body">
-                <blockquote class="card-blockquote">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </blockquote>
-            </div>
-      </div>
-
-
-       <div class="card text-white bg-success mb-3 text-center">
-          <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">Historia</a></div>
-            <div class="card-body">
-                <blockquote class="card-blockquote">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star"></span>
-                    <span class="fa fa-star"></span>
-                </blockquote>
-            </div>
-      </div>
-
-    </div>
 
 </body>
 
