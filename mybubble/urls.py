@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LoginView
-from .views import index,registro,recover, signIn , recuperar
+from .views import index,registro,recover, signIn , recuperar,updateDatos
 
 
 
@@ -13,6 +13,8 @@ urlpatterns = [
     path('micuenta', LoginView.as_view(), name='micuenta'),
     path('inicio', LoginView.as_view(), name='inicio'),
     path('recuperar', recuperar, name="recuperar"),
+    path('updateDatos', updateDatos, name="updateDatos"),
+    
     
 
     

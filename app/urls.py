@@ -31,7 +31,10 @@ urlpatterns = [
     path('calendario/',views.calendario, name='calendario'),
     path('micuenta/',views.micuenta, name='micuenta'),
     path('inicio/',views.inicio, name='inicio'),
-    path('recuperar/',views.recuperar, name='recuperar'),    
+    path('recuperar/',views.recuperar, name='recuperar'),
+    path('updateDatos/',views.updateDatos, name='updateDatos'),  
+
+       
     
     
 ]

@@ -4,18 +4,22 @@
 
 {% load static %}
 {% block content %}
-    {% csrf_token %}
+
 {% include "nav.html" %}
 <body>
 
-<h1 id="test">hola {{nombre}}</h1>
+<h1 id="test">hola {{nombre}} {{asyg}}</h1>
 
-</body>
+<form action="/updateDatos/" method="post">
+{% csrf_token %}
+    <input type="file" name="files[]" id="files">
+    <input type="hidden" name="url" id="url">
+    <button type="button" onclick="uploadimage()">Upload</button><br><br>
+<input type="submit" value="Submit">
+</form>
 
 
-
-
-
+<script src="{% static 'js/auth.js' %}"></script>
 
 {% endblock content %}
 

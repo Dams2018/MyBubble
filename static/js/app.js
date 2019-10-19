@@ -1,5 +1,7 @@
+
 hideAddressBar();
 //hola
+
 
 function hideAddressBar()
 {

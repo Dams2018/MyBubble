@@ -11,7 +11,7 @@ config = {
     'authDomain': "mybubblenet-326f3.firebaseapp.com",
     'databaseURL': "https://mybubblenet-326f3.firebaseio.com",
     'projectId': "mybubblenet-326f3",
-    'storageBucket': "",
+    'storageBucket': "mybubblenet-326f3.appspot.com",
     'messagingSenderId': "495901667657",
     'appId': "1:495901667657:web:2629d55863304ef9"
 }
@@ -19,6 +19,7 @@ config = {
 firebase = pyrebase.initialize_app(config)
 authe = firebase.auth()
 database=firebase.database()
+storage=firebase.storage()
 
 
 def signIn(request):
@@ -102,7 +103,7 @@ def postsign(request):
 
 
 def lol(a):
-    
+
     asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
     print(asyg)
     if asyg=="3ºBasico":
@@ -158,9 +159,11 @@ def calendario(request):
         a = a[0]
         a = a['localId']
     except:
-        message="Dolor"
+        message="Pillin"
         return render(request,"index.html",{"messg":message})
-    return render(request, 'calendario.html', {})
+
+    img_url = database.child('users').child(a).child('imagen').child('url').get().val()
+    return render(request, 'calendario.html', {'img':img_url})
 
 
 def micuenta(request):
@@ -172,11 +175,18 @@ def micuenta(request):
         a = a['localId']
         
     except:
-        message="Dolor"
+        message="Pillin"
         return render(request,"index.html",{"messg":message})
 
-    name = database.child('users').child(a).child('details').child('name').get().val()
-    return render(request, 'micuenta.html', {'nombre':name})
+
+        #datos de la cuenta
+    #storage.child("images/customFile.jpg").put("customFile", user['idToken'])
+    storage.child("images/customFile")
+
+    asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
+    name = database.child('users').child(a).child('detalles').child('name').get().val()
+    img_url = database.child('users').child(a).child('imagen').child('url').get().val()
+    return render(request, 'micuenta.html', {'nombre':name,'asyg':asyg,'img':img_url})
 
 
 def inicio(request):
@@ -189,7 +199,7 @@ def inicio(request):
         #print(idtoken)
         
     except:
-        message="Dolor"
+        message="Pillin"
         return render(request,"index.html",{"messg":message})
     
     asy = database.child('users').child(a).child('asignatura').child('asy').get()
@@ -199,6 +209,24 @@ def inicio(request):
         #print(user.val()) # nombre se asignatura
         my_list.append(user.val())
     #print(my_list)   
-    
-    return render(request, 'Inicio.html', {'asy': my_list})
+    img_url = database.child('users').child(a).child('imagen').child('url').get().val()
+    return render(request, 'Inicio.html', {'asy': my_list,'img':img_url})
   
+
+def updateDatos(request):
+    url = request.POST.get('url')
+    idtoken= request.session['uid']
+    a = authe.get_account_info(idtoken)
+    a = a['users']
+    a = a[0]
+    a = a['localId']
+    print("info"+str(a))
+    data = {
+    'url':url
+    }
+    asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
+    name = database.child('users').child(a).child('detalles').child('name').get().val()
+    database.child('users').child(a).child('imagen').set(data)
+    img_url = database.child('users').child(a).child('imagen').child('url').get().val()
+    print(img_url)
+    return render(request, 'micuenta.html', {'nombre':name,'asyg':asyg,'img':img_url})

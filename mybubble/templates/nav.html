@@ -9,7 +9,7 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="{% url 'inicio' %}">Inicio</a>
             </li>
             <li class="nav-item">
@@ -23,7 +23,7 @@
         </div>
 
         <div class="dropdown" id="cuenta">
-                <img src="{% static 'img/user.png' %}"
+                <img src="{{img}}"
                 alt="..." style='width:40px; height:40px' class="rounded-circle shadow " 
                 id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                 class="btn btn-success dropdown-toggle" role="button">
