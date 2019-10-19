@@ -57,11 +57,13 @@ def postsignup(request):
     email=request.POST.get('email')
     asignaturas=request.POST.get('asignatura')
     passw=request.POST.get('pass')
+
     try:
         user=authe.create_user_with_email_and_password(email,passw)
         uid= user['localId']
         data={"name":name,"lastname":lastname,"status":"1","asignatura":asignaturas}
         database.child("users").child(uid).child("detalles").set(data)
+
         
     except:
         message="La cuenta ya existe"
