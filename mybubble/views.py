@@ -35,7 +35,8 @@ def index(request):
     return render(request, 'index.html', {})
 
 def registro(request):
-    return render(request, 'register.html', {})
+    lista=["3ºBasico", "4ºBasico", "5ºBasico", "6ºBasico"]
+    return render(request, 'register.html', {'asignaturas': lista})
 
 def recover(request):
     return render(request, 'recover.html', {})
@@ -53,12 +54,13 @@ def postsignup(request):
     name=request.POST.get('name')
     lastname=request.POST.get('lastname')
     email=request.POST.get('email')
+    asignaturas=request.POST.get('asignatura')
     passw=request.POST.get('pass')
     try:
         user=authe.create_user_with_email_and_password(email,passw)
         uid= user['localId']
-        data={"name":name,"lastname":lastname,"status":"1"}
-        database.child("users").child(uid).child("details").set(data)
+        data={"name":name,"lastname":lastname,"status":"1","asignatura":asignaturas}
+        database.child("users").child(uid).child("detalles").set(data)
         
     except:
         message="La cuenta ya existe"
@@ -80,7 +82,7 @@ def postsign(request):
     except:
         message="Error de Credencial"
         return render(request,"index.html",{"messg":message})
-    print(user['idToken'])
+   # print(user['idToken'])
 
     session_id=user['idToken']
     request.session['uid']=str(session_id)
@@ -90,6 +92,7 @@ def postsign(request):
     a = a['users']
     a = a[0]
     a = a['localId']
+
     lol(a)
 
     return render(request, "load.html",{})
@@ -99,13 +102,37 @@ def postsign(request):
 
 
 def lol(a):
-    data = {
+    
+    asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
+    print(asyg)
+    if asyg=="3ºBasico":
+            data = {
+        "Asignatura1":"Lenguaje",
+        "Asignatura2":"Matematicas",
+        }
+    elif asyg=="4ºBasico":
+                    data = {
+        "Asignatura1":"Lenguaje",
+        "Asignatura2":"Matematicas",
+        "Asignatura3":"Naturales",
+        }
+    elif asyg=="5ºBasico":
+                    data = {
+        "Asignatura1":"Lenguaje",
+        "Asignatura2":"Matematicas",
+        "Asignatura3":"Naturales",
+        "Asignatura4":"Historia",
+        }
+    elif asyg=="6ºBasico":
+                    data = {
         "Asignatura1":"Lenguaje",
         "Asignatura2":"Matematicas",
         "Asignatura3":"Naturales",
         "Asignatura4":"Historia",
         "Asignatura5":"Ingles"
-    }
+        }
+
+
     database.child('users').child(a).child('asignatura').child('asy').set(data)
 
 
@@ -118,7 +145,7 @@ def comprobar():
     a = a['users']
     a = a[0]
     a = a['localId']
-    print(idtoken)
+
 
 
 
@@ -130,7 +157,6 @@ def calendario(request):
         a = a['users']
         a = a[0]
         a = a['localId']
-        print(idtoken)
     except:
         message="Dolor"
         return render(request,"index.html",{"messg":message})
@@ -144,7 +170,6 @@ def micuenta(request):
         a = a['users']
         a = a[0]
         a = a['localId']
-        print(idtoken)
         
     except:
         message="Dolor"
@@ -161,7 +186,7 @@ def inicio(request):
         a = a['users']
         a = a[0]
         a = a['localId']
-        print(idtoken)
+        #print(idtoken)
         
     except:
         message="Dolor"
@@ -173,7 +198,7 @@ def inicio(request):
        # print(user.key()) # Asignatura
         #print(user.val()) # nombre se asignatura
         my_list.append(user.val())
-    print(my_list)   
+    #print(my_list)   
     
     return render(request, 'Inicio.html', {'asy': my_list})
   
