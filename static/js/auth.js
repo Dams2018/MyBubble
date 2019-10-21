@@ -29,7 +29,13 @@
   var downloadURL = thisref.snapshot.downloadURL;
   console.log("got url");
   document.getElementById("url").value = downloadURL;
-  alert("file uploaded successfully");
+  Swal.fire({
+    position: 'top-end',
+    type: 'success',
+    title: 'Your work has been saved',
+    showConfirmButton: false,
+    timer: 1500
+  })
 });
     }
   //actulizacion firestore
