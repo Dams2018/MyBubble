@@ -7,17 +7,35 @@
 
 {% include "nav.html" %}
 <body>
+   <div id="espacio" class="container" >
 
-<h1 id="test">hola {{nombre}} {{asyg}}</h1>
 
 <form action="/updateDatos/" method="post">
+
+<div class="image-upload ">
+  <label class="center" for="files">
+    <img src="{{img}}" style='width:90px; height:90px'  class="rounded-circle shadow" style="pointer-events: none"/>
+  </label>
+  <input id="files" type="file" name="files[]"/>
+
+{{asyg}}
+<h3 id="color">Bienvenido, {{nombre}} {{apellido}}</h3>
+
 {% csrf_token %}
-    <input type="file" name="files[]" id="files">
-    <input type="hidden" name="url" id="url">
-    <button type="button" onclick="uploadimage()">Upload</button><br><br>
-<input type="submit" value="Submit">
+
+  <input type="hidden" name="url" id="url">
+</div>
+
+
+
+    <button type="button" class="btn btn-success" onclick="uploadimage()">Upload</button><br><br>
+<input type="submit"  class="btn btn-success" value="Guardar Cambios" >
 </form>
 
+
+
+
+</body>
 
 <script src="{% static 'js/auth.js' %}"></script>
 

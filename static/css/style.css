@@ -48,8 +48,8 @@ footer {
     margin-bottom: auto;
 }
 
-#test{
-    color: brown;
+#color{
+    color: #1D1E1F;
 }
 
 #logo{
@@ -171,3 +171,11 @@ footer {
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+
+.image-upload > input {
+    visibility:hidden;
+    width:0;
+    height:0;
+
+  }
