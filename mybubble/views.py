@@ -5,6 +5,9 @@ from django.contrib import auth
 from django.contrib.auth import authenticate, logout, login
 
 
+  
+
+
 # Firebase
 config = {
     'apiKey': "AIzaSyDr7sOBMFAeNZHS5W34TEvma_IzmJ4Dz80",
