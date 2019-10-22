@@ -187,9 +187,8 @@ def micuenta(request):
 
     asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
     name = database.child('users').child(a).child('detalles').child('name').get().val()
-    lastname = database.child('users').child(a).child('detalles').child('lastname').get().val()
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
-    return render(request, 'micuenta.html', {'nombre':name,'apellido':lastname,'asyg':asyg,'img':img_url})
+    return render(request, 'micuenta.html', {'nombre':name,'asyg':asyg,'img':img_url})
 
 
 def inicio(request):
@@ -229,8 +228,7 @@ def updateDatos(request):
     }
     asyg = database.child('users').child(a).child('detalles').child('asignatura').get().val()
     name = database.child('users').child(a).child('detalles').child('name').get().val()
-    lastname = database.child('users').child(a).child('detalles').child('lastname').get().val()
     database.child('users').child(a).child('imagen').set(data)
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
-    print(lastname)
-    return render(request, 'micuenta.html', {'nombre':name,'apellido':lastname,'asyg':asyg,'img':img_url})
+    print(img_url)
+    return render(request, 'micuenta.html', {'nombre':name,'asyg':asyg,'img':img_url})

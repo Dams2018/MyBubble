@@ -16,7 +16,7 @@
   // Get a reference to the storage service, which is used to create references in your storage bucket
   function uploadimage(){
   var storage = firebase.storage();
-  var file = document.getElementById("file").files[0];
+  var file = document.getElementById("files").files[0];
   var storageRef = storage.ref();
   var thisref = storageRef.child(file.name).put(file);
   thisref.on('state_changed',function(snapshot){
@@ -32,12 +32,16 @@
   Swal.fire({
     position: 'top-end',
     type: 'success',
-    title: 'Your work has been saved',
+    title: 'Actulizando perfil',
     showConfirmButton: false,
     timer: 1500
   })
+  clickone();
 });
     }
   //actulizacion firestore
 
 
+function clickone(){
+    document.getElementById('btn').click();
+    }
