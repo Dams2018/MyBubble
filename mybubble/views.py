@@ -161,7 +161,7 @@ def calendario(request):
         a = a[0]
         a = a['localId']
     except:
-        message="Pillin"
+        message="Tu sesión ha expirado."
         return render(request,"index.html",{"messg":message})
 
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
@@ -177,7 +177,7 @@ def micuenta(request):
         a = a['localId']
         
     except:
-        message="Pillin"
+        message="Tu sesión ha expirado."
         return render(request,"index.html",{"messg":message})
 
 
@@ -201,7 +201,7 @@ def inicio(request):
         #print(idtoken)
         
     except:
-        message="Pillin"
+        message="Tu sesión ha expirado."
         return render(request,"index.html",{"messg":message})
     
     asy = database.child('users').child(a).child('asignatura').child('asy').get()
