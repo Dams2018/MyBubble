@@ -216,13 +216,21 @@ def inicio(request):
   
 
 def updateDatos(request):
-    url = request.POST.get('url')
-    idtoken= request.session['uid']
-    a = authe.get_account_info(idtoken)
-    a = a['users']
-    a = a[0]
-    a = a['localId']
-    print("info"+str(a))
+
+
+    try:
+        url = request.POST.get('url')
+        idtoken= request.session['uid']
+        idtoken = request.session['uid']
+        a = authe.get_account_info(idtoken)
+        a = a['users']
+        a = a[0]
+        a = a['localId']
+    except:
+        message="Tu sesión ha expirado."
+        return render(request,"index.html",{"messg":message})
+
+
     data = {
     'url':url
     }
