@@ -116,25 +116,25 @@ def lol(a):
     if asyg=="3ºBasico":
             data = {
         "Asignatura1":"Lenguaje",
-        "Asignatura2":"Matematicas",
+        "Asignatura2":"Matemáticas",
         }
     elif asyg=="4ºBasico":
                     data = {
         "Asignatura1":"Lenguaje",
-        "Asignatura2":"Matematicas",
+        "Asignatura2":"Matemáticas",
         "Asignatura3":"Naturales",
         }
     elif asyg=="5ºBasico":
                     data = {
         "Asignatura1":"Lenguaje",
-        "Asignatura2":"Matematicas",
+        "Asignatura2":"Matemáticas",
         "Asignatura3":"Naturales",
         "Asignatura4":"Historia",
         }
     elif asyg=="6ºBasico":
                     data = {
         "Asignatura1":"Lenguaje",
-        "Asignatura2":"Matematicas",
+        "Asignatura2":"Matemáticas",
         "Asignatura3":"Naturales",
         "Asignatura4":"Historia",
         "Asignatura5":"Ingles"
@@ -173,13 +173,36 @@ def calendario(request):
     #cal(a)
     lunes = database.child('users').child(a).child('calendario').child('lunes').get()
     martes = database.child('users').child(a).child('calendario').child('martes').get()
+    miercoles = database.child('users').child(a).child('calendario').child('miercoles').get()
+    jueves = database.child('users').child(a).child('calendario').child('jueves').get()
+    viernes = database.child('users').child(a).child('calendario').child('viernes').get()
+
 
     mlunes = []
-    for user in lunes.each():
-        mlunes.append(user.val)
+    mmartes = []
+    mmiercoles = []
+    mjueves = []
+    mviernes = []
+
+    for a in lunes.each():
+        mlunes.append(a.val)
+
+    for b in martes.each():
+        mmartes.append(b.val)
+
+    for c in miercoles.each():
+        mmiercoles.append(c.val)
+
+    for d in jueves.each():
+        mjueves.append(d.val)
+
+    for e in viernes.each():
+        mviernes.append(e.val)
 
 
-    return render(request, 'calendario.html', {'img':img_url,'calendario':mlunes})
+
+    return render(request, 'calendario.html', {'img':img_url,'lunes':mlunes,'martes':mmartes,'miercoles':mmiercoles,
+    'jueves':mjueves,'viernes':mviernes})
 
 
 
@@ -187,34 +210,27 @@ def cal(a):
     cali = database.child('users').child(a).child('calendario').get()
 
 
-    lunes = {"0":"Matematicas",
+    lunes = {"0":"Matemáticas",
             "1":"Naturales",
             "2":"Ingles",
-            "3":"Historia"
+            "3":"Lenguaje"
             }
     database.child('users').child(a).child('calendario').child('lunes').set(lunes)
-    martes = {"0":"Matematicas",
-            "1":"Naturales",
-            "2":"Ingles",
-            "3":"Historia"
+    martes = {"0":"Matemáticas",
+            "1":"Historia"
             }
     database.child('users').child(a).child('calendario').child('martes').set(martes)
-    miercoles = {"0":"Matematicas",
-            "1":"Naturales",
-            "2":"Ingles",
-            "3":"Historia"
+    miercoles = {"0":"Ingles",
+            "1":"Historia"
             }
     database.child('users').child(a).child('calendario').child('miercoles').set(miercoles)
-    jueves = {"0":"Matematicas",
+    jueves = {"0":"Matemáticas",
             "1":"Naturales",
-            "2":"Ingles",
-            "3":"Historia"
+            "2":"Ingles"
             }
     database.child('users').child(a).child('calendario').child('jueves').set(jueves)
-    viernes = {"0":"Matematicas",
-            "1":"Naturales",
-            "2":"Ingles",
-            "3":"Historia"
+    viernes = {"0":"Matemáticas",
+            "1":"Naturales"
             }
     database.child('users').child(a).child('calendario').child('viernes').set(viernes)
 
