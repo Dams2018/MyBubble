@@ -10,6 +10,7 @@
 <div id="espacio" class="row d-flex justify-content-center">
 
 
+
   <!--1-->
   <div class="left flip-box shadow margin">
     <div class="flip-box-inner ">
@@ -20,22 +21,13 @@
         
         <!--conetendor de asignaturas-->
         <div class="container-flex">
-
-          <div class="card text-white bg-primary mb-3 text-center margin">
-            <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">Matemáticas</a></div>           
+          {% for m in calendario %}
+            <div class="card text-white bg-primary mb-3 text-center margin">
+              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>           
+            </div>
+          {% endfor %}
           </div>
-
-          <div class="card text-white bg-danger  mb-3 text-center margin">
-            <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">Lenguaje</a></div>
-          </div>
-
-          <div class="card text-white bg-info  mb-3 text-center margin">
-            <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">Inglés</a></div>
-          </div>
-
         </div>
-
-      </div>
 
 
 

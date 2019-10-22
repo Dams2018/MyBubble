@@ -100,6 +100,8 @@ def postsign(request):
     a = a['localId']
 
     lol(a)
+    cal(a)
+
 
     return render(request, "load.html",{})
 
@@ -168,8 +170,53 @@ def calendario(request):
         return render(request,"index.html",{"messg":message})
 
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
-    return render(request, 'calendario.html', {'img':img_url})
+    #cal(a)
+    lunes = database.child('users').child(a).child('calendario').child('lunes').get()
+    martes = database.child('users').child(a).child('calendario').child('martes').get()
 
+    mlunes = []
+    for user in lunes.each():
+        mlunes.append(user.val)
+
+
+    return render(request, 'calendario.html', {'img':img_url,'calendario':mlunes})
+
+
+
+def cal(a):
+    cali = database.child('users').child(a).child('calendario').get()
+
+
+    lunes = {"0":"Matematicas",
+            "1":"Naturales",
+            "2":"Ingles",
+            "3":"Historia"
+            }
+    database.child('users').child(a).child('calendario').child('lunes').set(lunes)
+    martes = {"0":"Matematicas",
+            "1":"Naturales",
+            "2":"Ingles",
+            "3":"Historia"
+            }
+    database.child('users').child(a).child('calendario').child('martes').set(martes)
+    miercoles = {"0":"Matematicas",
+            "1":"Naturales",
+            "2":"Ingles",
+            "3":"Historia"
+            }
+    database.child('users').child(a).child('calendario').child('miercoles').set(miercoles)
+    jueves = {"0":"Matematicas",
+            "1":"Naturales",
+            "2":"Ingles",
+            "3":"Historia"
+            }
+    database.child('users').child(a).child('calendario').child('jueves').set(jueves)
+    viernes = {"0":"Matematicas",
+            "1":"Naturales",
+            "2":"Ingles",
+            "3":"Historia"
+            }
+    database.child('users').child(a).child('calendario').child('viernes').set(viernes)
 
 def micuenta(request):
     try:
