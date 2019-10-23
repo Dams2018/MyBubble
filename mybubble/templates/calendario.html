@@ -7,82 +7,177 @@
 
 {% include "nav.html" %}
 <body>
-  <div id="espacio" class="container" >
-
+ <div id="calendario" class="row d-flex justify-content-center">
 
 
 {% for i in semana %}
-<div class="rounded shadow margin">
-  {% if i == 'Lunes' %}
-  <div class="card text-white bg-success mb-3">
-  {% elif i == 'Martes' %}
-  <div class="card text-white bg-warning mb-3">
-  {% elif i == 'Miercoles' %}
-  <div class="card text-white bg-primary mb-3">
-  {% elif i == 'Jueves' %}
-  <div class="card text-white bg-dark mb-3">
-  {% elif i == 'Viernes' %}
-  <div class="card bg-light mb-3">
-   {% endif %}
 
-   
-<div class="card-header">{{i}}</div>
-  <div class="card-body">   
-  {% if i == 'Lunes' %}
-    {% for a in lunes %}
 
-      <h5 class="card-title">{{a}}</h5>
-      <br/>
-        {% endfor %}
-            <p class="card-text"></p>
-          </div>
+  <!--1-->
+  <div class="left flip-box shadow margin">
+    <div class="flip-box-inner ">
+      <div class="flip-box-front center">
+
+        <!--titulo-->
+        <h2 class="titulo">{{i}}</h2>
+
+ {% if i == 'Lunes' %}  
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+
+          {% for a in lunes %}
+            {% if a == 'Matemáticas' %} 
+              <div class="card text-white bg-primary mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Lenguaje' %} 
+              <div class="card text-white bg-danger  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Naturales' %} 
+              <div class="card text-white bg-warning mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Historia' %} 
+              <div class="card text-white bg-success mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Inglés' %} 
+              <div class="card text-white bg-info  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{a}}</a></div></div>
+            {% endif %}
+
+          {% endfor %}  
         </div>
+      </div>
 
-  {% elif i == 'Martes' %}
-      {% for a in martes %}
+{% endif %}
 
 
-      <h5 class="card-title">{{a}}</h5>
-      <br/>
-        {% endfor %}
-            <p class="card-text"></p>
-          </div>
+
+ {% if i == 'Martes' %}  
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+
+          {% for a in martes %}
+            {% if a == 'Matemáticas' %} 
+              <div class="card text-white bg-primary mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Lenguaje' %} 
+              <div class="card text-white bg-danger  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Naturales' %} 
+              <div class="card text-white bg-warning mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Historia' %} 
+              <div class="card text-white bg-success mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Inglés' %} 
+              <div class="card text-white bg-info  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{a}}</a></div></div>
+            {% endif %}
+
+          {% endfor %}  
         </div>
-  {% elif i == 'Miercoles' %}
-      {% for a in miercoles %}
+      </div>
 
-      <h5 class="card-title">{{a}}</h5>
-      <br/>
-        {% endfor %}
-            <p class="card-text"></p>
-          </div>
+{% endif %}
+
+
+ {% if i == 'Miercoles' %}  
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+
+          {% for a in miercoles %}
+            {% if a == 'Matemáticas' %} 
+              <div class="card text-white bg-primary mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Lenguaje' %} 
+              <div class="card text-white bg-danger  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Naturales' %} 
+              <div class="card text-white bg-warning mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Historia' %} 
+              <div class="card text-white bg-success mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Inglés' %} 
+              <div class="card text-white bg-info  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{a}}</a></div></div>
+            {% endif %}
+
+          {% endfor %}  
         </div>
+      </div>
 
-  {% elif i == 'Jueves' %}
-      {% for a in jueves %}
+{% endif %}
 
-      <h5 class="card-title">{{a}}</h5>
-      <br/>
-        {% endfor %}
-            <p class="card-text"></p>
-          </div>
+ {% if i == 'Jueves' %}  
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+
+          {% for a in jueves %}
+            {% if a == 'Matemáticas' %} 
+              <div class="card text-white bg-primary mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Lenguaje' %} 
+              <div class="card text-white bg-danger  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Naturales' %} 
+              <div class="card text-white bg-warning mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Historia' %} 
+              <div class="card text-white bg-success mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Inglés' %} 
+              <div class="card text-white bg-info  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{a}}</a></div></div>
+            {% endif %}
+
+          {% endfor %}  
         </div>
+      </div>
 
-  {% elif i == 'Viernes' %}
-      {% for a in viernes %}
-      <h5 class="card-title">{{a}}</h5>
-      <br/>
-        {% endfor %}
-            <p class="card-text"></p>
-          </div>
+{% endif %}
+
+
+
+ {% if i == 'Viernes' %}  
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+
+          {% for a in viernes %}
+            {% if a == 'Matemáticas' %} 
+              <div class="card text-white bg-primary mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Lenguaje' %} 
+              <div class="card text-white bg-danger  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Naturales' %} 
+              <div class="card text-white bg-warning mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Historia' %} 
+              <div class="card text-white bg-success mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{a}}</a></div></div>
+            {% elif a == 'Inglés' %} 
+              <div class="card text-white bg-info  mb-3 text-center margin">
+                <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{a}}</a></div></div>
+            {% endif %}
+
+          {% endfor %}  
         </div>
+      </div>
 
-   {% endif %}
-
+{% endif %}
+      <!--back-->
+      <div class="flip-box-back">
+        <h2>9 de Septiembre</h2>
+        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
+        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="bubble.html" role="button">Jugar</a></div>
+      </div>
+    </div>
   </div>
+
 {% endfor %}
 
 
+</div>
 </body>
 
 <div id="espacio" class="container" ></div>

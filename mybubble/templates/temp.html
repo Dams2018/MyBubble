@@ -1,0 +1,72 @@
+
+
+{% for i in semana %}
+<div class="rounded shadow margin">
+  {% if i == 'Lunes' %}
+  <div class="card text-white bg-success mb-3">
+  {% elif i == 'Martes' %}
+  <div class="card text-white bg-warning mb-3">
+  {% elif i == 'Miercoles' %}
+  <div class="card text-white bg-primary mb-3">
+  {% elif i == 'Jueves' %}
+  <div class="card text-white bg-dark mb-3">
+  {% elif i == 'Viernes' %}
+  <div class="card bg-light mb-3">
+   {% endif %}
+
+   
+<div class="card-header">{{i}}</div>
+  <div class="card-body">   
+  {% if i == 'Lunes' %}
+    {% for a in lunes %}
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
+          </div>
+        </div>
+
+  {% elif i == 'Martes' %}
+      {% for a in martes %}
+
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
+          </div>
+        </div>
+  {% elif i == 'Miercoles' %}
+      {% for a in miercoles %}
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
+          </div>
+        </div>
+
+  {% elif i == 'Jueves' %}
+      {% for a in jueves %}
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
+          </div>
+        </div>
+
+  {% elif i == 'Viernes' %}
+      {% for a in viernes %}
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
+          </div>
+        </div>
+
+   {% endif %}
+
+  </div>
+{% endfor %}
