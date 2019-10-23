@@ -17,6 +17,10 @@
 
 <div class="loader center espacio"></div>
 
+<marquee behavior="scroll" direction="left" scrollamount="10">Cargando Booblesito</marquee>
+<marquee behavior="scroll" direction="right" scrollamount="20"><img src="{% static 'img/kWFwiS9.gif' %}" width="130" height="100" alt="smile">Cargando BD o DB........</marquee>
+
+
 
      <!-- splash-->
 
@@ -24,7 +28,7 @@
 
       window.onload=timeout;
       function timeout(){
-      window.setTimeout("redirect()",6000)}
+      window.setTimeout("redirect()",8000)}
       
       function redirect(){
       window.location="{% url 'inicio' %}"
