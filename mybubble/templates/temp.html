@@ -1,0 +1,41 @@
+
+{% for i in semana %}
+
+{% if lunes != null %}
+  <!--1-->
+  <div class="left flip-box shadow margin">
+    <div class="flip-box-inner ">
+      <div class="flip-box-front center">
+
+        <!--titulo-->
+        <h2 class="titulo">{{i}}</h2>
+        
+        <!--conetendor de asignaturas-->
+        <div class="container-flex">
+          {% for m in lunes %}
+
+          {% if m == 'Matemáticas' %}
+            <div class="card text-white bg-primary mb-3 text-center margin">
+              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>         
+            </div>
+          {% elif m == 'Lenguaje' %}
+            <div class="card text-white bg-danger mb-3 text-center margin">
+              <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{m}}</a></div>         
+            </div>
+            {% endif %} 
+
+
+          {% endfor %}
+          </div>
+        </div>
+      <!--back-->
+      <div class="flip-box-back">
+        <h2>9 de Septiembre</h2>
+        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
+        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
+      </div>
+    </div>
+  </div>
+
+<br/>
+

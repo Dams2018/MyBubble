@@ -7,167 +7,85 @@
 
 {% include "nav.html" %}
 <body>
-<div id="espacio" class="row d-flex justify-content-center">
+  <div id="espacio" class="container" >
 
 
-{% if lunes != null %}
-  <!--1-->
-  <div class="left flip-box shadow margin">
-    <div class="flip-box-inner ">
-      <div class="flip-box-front center">
 
-        <!--titulo-->
-        <h2 class="titulo">Lunes</h2>
-        
-        <!--conetendor de asignaturas-->
-        <div class="container-flex">
-          {% for m in lunes %}
+{% for i in semana %}
+<div class="rounded shadow margin">
+  {% if i == 'Lunes' %}
+  <div class="card text-white bg-success mb-3">
+  {% elif i == 'Martes' %}
+  <div class="card text-white bg-warning mb-3">
+  {% elif i == 'Miercoles' %}
+  <div class="card text-white bg-primary mb-3">
+  {% elif i == 'Jueves' %}
+  <div class="card text-white bg-dark mb-3">
+  {% elif i == 'Viernes' %}
+  <div class="card bg-light mb-3">
+   {% endif %}
 
-          {% if m == 'Matemáticas' %}
-            <div class="card text-white bg-primary mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>         
-            </div>
-          {% elif m == 'Lenguaje' %}
-            <div class="card text-white bg-danger mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{m}}</a></div>         
-            </div>
-            {% endif %} 
+   
+<div class="card-header">{{i}}</div>
+  <div class="card-body">   
+  {% if i == 'Lunes' %}
+    {% for a in lunes %}
 
-
-          {% endfor %}
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
           </div>
         </div>
-      <!--back-->
-      <div class="flip-box-back">
-        <h2>9 de Septiembre</h2>
-        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
-        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-<br/>
 
-  <!--2-->
-{% if martes != null %}
-  <!--1-->
-  <div class="left flip-box shadow margin">
-    <div class="flip-box-inner ">
-      <div class="flip-box-front center">
+  {% elif i == 'Martes' %}
+      {% for a in martes %}
 
-        <!--titulo-->
-        <h2 class="titulo">Martes</h2>
-        
-        <!--conetendor de asignaturas-->
-        <div class="container-flex">
-          {% for m in martes %}
-            <div class="card text-white bg-primary mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>           
-            </div>
-          {% endfor %}
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
           </div>
         </div>
-      <!--back-->
-      <div class="flip-box-back">
-        <h2>9 de Septiembre</h2>
-        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
-        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-<br/>
+  {% elif i == 'Miercoles' %}
+      {% for a in miercoles %}
 
-      <!--3-->
-{% if miercoles != null %}
-  <!--1-->
-  <div class="left flip-box shadow margin">
-    <div class="flip-box-inner ">
-      <div class="flip-box-front center">
-
-        <!--titulo-->
-        <h2 class="titulo">Miercoles</h2>
-        
-        <!--conetendor de asignaturas-->
-        <div class="container-flex">
-          {% for m in miercoles %}
-            <div class="card text-white bg-primary mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>           
-            </div>
-          {% endfor %}
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
           </div>
         </div>
-      <!--back-->
-      <div class="flip-box-back">
-        <h2>9 de Septiembre</h2>
-        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
-        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-<br/>
-          <!--4-->
-{% if jueves != null %}
-  <!--1-->
-  <div class="left flip-box shadow margin">
-    <div class="flip-box-inner ">
-      <div class="flip-box-front center">
 
-        <!--titulo-->
-        <h2 class="titulo">Jueves</h2>
-        
-        <!--conetendor de asignaturas-->
-        <div class="container-flex">
-          {% for m in jueves %}
-            <div class="card text-white bg-primary mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>           
-            </div>
-          {% endfor %}
+  {% elif i == 'Jueves' %}
+      {% for a in jueves %}
+
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
           </div>
         </div>
-      <!--back-->
-      <div class="flip-box-back">
-        <h2>9 de Septiembre</h2>
-        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
-        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
-      </div>
-    </div>
-  </div>
-  {% endif %}
-<br/>
-          <!--5-->
-{% if viernes != null %}
-  <!--1-->
-  <div class="left flip-box shadow margin">
-    <div class="flip-box-inner ">
-      <div class="flip-box-front center">
 
-        <!--titulo-->
-        <h2 class="titulo">Viernes</h2>
-        
-        <!--conetendor de asignaturas-->
-        <div class="container-flex">
-          {% for m in viernes %}
-            <div class="card text-white bg-primary mb-3 text-center margin">
-              <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>           
-            </div>
-          {% endfor %}
+  {% elif i == 'Viernes' %}
+      {% for a in viernes %}
+      <h5 class="card-title">{{a}}</h5>
+      <br/>
+        {% endfor %}
+            <p class="card-text"></p>
           </div>
         </div>
-      <!--back-->
-      <div class="flip-box-back">
-        <h2>9 de Septiembre</h2>
-        <div>Prueba de Matemáticas 1 te recomendamos ir a practicar</div>
-        <div class="fixed-bottom margin"><a class="btn btn-warning margin " href="" role="button">Jugar</a></div>
-      </div>
-    </div>
+
+   {% endif %}
+
   </div>
-  {% endif %}
-<br/>
+{% endfor %}
+
 
 </body>
 
+<div id="espacio" class="container" ></div>
 
 
 </html>

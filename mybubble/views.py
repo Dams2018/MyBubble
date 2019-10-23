@@ -137,7 +137,7 @@ def lol(a):
         "Asignatura2":"Matemáticas",
         "Asignatura3":"Naturales",
         "Asignatura4":"Historia",
-        "Asignatura5":"Ingles"
+        "Asignatura5":"Inglés"
         }
 
 
@@ -171,18 +171,19 @@ def calendario(request):
 
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
     #cal(a)
-    lunes = database.child('users').child(a).child('calendario').child('lunes').get()
-    martes = database.child('users').child(a).child('calendario').child('martes').get()
-    miercoles = database.child('users').child(a).child('calendario').child('miercoles').get()
-    jueves = database.child('users').child(a).child('calendario').child('jueves').get()
-    viernes = database.child('users').child(a).child('calendario').child('viernes').get()
-
+    lunes = database.child('users').child(a).child('calendario').child('01Lunes').get()
+    martes = database.child('users').child(a).child('calendario').child('02Martes').get()
+    miercoles = database.child('users').child(a).child('calendario').child('03Miercoles').get()
+    jueves = database.child('users').child(a).child('calendario').child('04Jueves').get()
+    viernes = database.child('users').child(a).child('calendario').child('05Viernes').get()
+    semana = database.child('users').child(a).child('calendario').get()
 
     mlunes = []
     mmartes = []
     mmiercoles = []
     mjueves = []
     mviernes = []
+    msemana = []
 
     for a in lunes.each():
         mlunes.append(a.val)
@@ -198,11 +199,15 @@ def calendario(request):
 
     for e in viernes.each():
         mviernes.append(e.val)
-
+        
+    for sem in semana.each():
+        #print(sem.key()[2:]) #eliminando los
+        msemana.append(sem.key()[2:])
+       
 
 
     return render(request, 'calendario.html', {'img':img_url,'lunes':mlunes,'martes':mmartes,'miercoles':mmiercoles,
-    'jueves':mjueves,'viernes':mviernes})
+    'jueves':mjueves,'viernes':mviernes,'semana':msemana})
 
 
 
@@ -212,27 +217,28 @@ def cal(a):
 
     lunes = {"0":"Matemáticas",
             "1":"Naturales",
-            "2":"Ingles",
+            "2":"Inglés",
             "3":"Lenguaje"
+            
             }
-    database.child('users').child(a).child('calendario').child('lunes').set(lunes)
+    database.child('users').child(a).child('calendario').child('01Lunes').set(lunes)
     martes = {"0":"Matemáticas",
             "1":"Historia"
             }
-    database.child('users').child(a).child('calendario').child('martes').set(martes)
-    miercoles = {"0":"Ingles",
+    database.child('users').child(a).child('calendario').child('02Martes').set(martes)
+    miercoles = {"0":"Inglés",
             "1":"Historia"
             }
-    database.child('users').child(a).child('calendario').child('miercoles').set(miercoles)
+    database.child('users').child(a).child('calendario').child('03Miercoles').set(miercoles)
     jueves = {"0":"Matemáticas",
             "1":"Naturales",
-            "2":"Ingles"
+            "2":"Inglés"
             }
-    database.child('users').child(a).child('calendario').child('jueves').set(jueves)
+    database.child('users').child(a).child('calendario').child('04Jueves').set(jueves)
     viernes = {"0":"Matemáticas",
             "1":"Naturales"
             }
-    database.child('users').child(a).child('calendario').child('viernes').set(viernes)
+    database.child('users').child(a).child('calendario').child('05Viernes').set(viernes)
 
 def micuenta(request):
     try:
