@@ -33,6 +33,8 @@ urlpatterns = [
     path('inicio/',views.inicio, name='inicio'),
     path('recuperar/',views.recuperar, name='recuperar'),
     path('updateDatos/',views.updateDatos, name='updateDatos'),  
+    path('bubble/',views.bubble, name='bubble'),  
+    
 
        
     

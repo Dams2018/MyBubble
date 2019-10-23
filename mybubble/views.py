@@ -52,6 +52,20 @@ def recuperar(request):
     return render(request, 'index.html', {})
 
 
+def bubble(request):
+    try:
+        idtoken = request.session['uid']
+        a = authe.get_account_info(idtoken)
+        a = a['users']
+        a = a[0]
+        a = a['localId']
+    except:
+        message="Tu sesión ha expirado."
+        return render(request,"index.html",{"messg":message})
+    img_url = database.child('users').child(a).child('imagen').child('url').get().val()
+    return render(request, 'bubble.html', {'img':img_url})
+
+
     
 
 def postsignup(request):
