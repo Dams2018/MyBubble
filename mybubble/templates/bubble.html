@@ -1,18 +1,13 @@
 <!DOCTYPE html>
 
-<!DOCTYPE html>
-
-
-
 {% load static %}
 {% block content %}
-
 
 {% include "nav.html" %}
 
 <body>
 
-<div class="card" style="width: 18rem;">
+<div class="card center" style="width: 18rem;">
   <img class="card-img-top" src="..." alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Titulo</h5>
@@ -85,7 +80,14 @@ function comprobar(){
 	//alert(respuesta);
 	//alert(indicie_respuesta_correcta);
 	if(respuesta ==indicie_respuesta_correcta){
-		alert("que bien!");
+    
+		Swal.fire({
+  title: 'Custom animation with Animate.css',
+  animation: false,
+  customClass: {
+    popup: 'animated tada'
+  }
+})
 	}else{
 		alert("me tiro por un puente");
 	}

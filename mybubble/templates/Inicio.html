@@ -14,19 +14,19 @@
 
 
   {% if m == 'Lenguaje' %}
-        <div class="card text-white bg-danger mb-3 text-center">
-        <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center">{{m}}</a></div>
+        <div class="card text-white bg-danger mb-3 text-center animated bounceInRight">
+        <div class="card-header"> <i class="material-icons left medium">local_library</i> <a class="center ">{{m}}</a></div>
     {% elif m == 'Matemáticas' %}
-        <div class="card text-white bg-primary mb-3 text-center">
+        <div class="card text-white bg-primary mb-3 text-center animated bounceInLeft">
         <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{m}}</a></div>
     {% elif m == 'Inglés' %}
-       <div class="card text-white bg-info mb-3 text-center">
+       <div class="card text-white bg-info mb-3 text-center animated bounceIn">
        <div class="card-header"> <i class="material-icons left medium">language</i> <a class="center">{{m}}</a></div>
     {% elif m == 'Naturales' %}
-        <div class="card text-white bg-warning mb-3 text-center">
+        <div class="card text-white bg-warning mb-3 text-center animated bounceInDown">
         <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{m}}</a></div>
     {% elif m == 'Historia' %}
-       <div class="card text-white bg-success mb-3 text-center">
+       <div class="card text-white bg-success mb-3 text-center animated bounceInUp">
         <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{m}}</a></div>
   {% else %}
     <div class="card text-white bg-primary mb-3 text-center">

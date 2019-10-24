@@ -7,7 +7,7 @@
 
 {% include "nav.html" %}
 <body>
- <div id="calendario" class="row d-flex justify-content-center">
+ <div id="calendario" class="row d-flex justify-content-center animated fadeInDownBig">
 
 
 {% for i in semana %}
@@ -23,11 +23,11 @@
 
  {% if i == 'Lunes' %}  
         <!--conetendor de asignaturas-->
-        <div class="container-flex">
+        <div class="container-flex ">
 
           {% for a in lunes %}
             {% if a == 'Matemáticas' %} 
-              <div class="card text-white bg-primary mb-3 text-center margin">
+              <div class="card text-white bg-primary mb-3 text-center margin ">
                 <div class="card-header"> <i class="material-icons left medium">exposure</i> <a class="center">{{a}}</a></div></div>
             {% elif a == 'Lenguaje' %} 
               <div class="card text-white bg-danger  mb-3 text-center margin">
