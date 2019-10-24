@@ -11,11 +11,25 @@
 {% include "nav.html" %}
 
 <body>
-<h1>Ejemplo de trivial sencillo programado con Javascript</h1>
-	<div id="pregunta"></div>
-	<div id="respuestas"></div>
 
-<input type="button" value="a ver si acerté" onclick="comprobar()">
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="..." alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Titulo</h5>
+    <p id="pregunta"> class="card-text"></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li id="respuestas" class="list-group-item"></li>
+
+  </ul>
+  <div class="card-body">
+    <input class= "btn btn-success" type="button" value="a ver si acerté" onclick="comprobar()">
+  </div>
+</div>
+
+
+
+
 
 
 
@@ -30,12 +44,7 @@
 
 	<script>
 		var preguntas = {{data|safe}};
-		var respuestas = [
-		["Colón", "El Fari", "Yo mismo", "Tú"],
-		["Spiderman", "Batman", "Yo mismo", "Tú mismo"],
-		["Tienen hambre", "Tienen frío", "Están contentos", "Están tristes"]
-
-		];
+		var respuestas ={{data2|safe}};
 jugar();
 
 		var indicie_respuesta_correcta;

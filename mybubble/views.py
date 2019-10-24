@@ -56,6 +56,24 @@ def recuperar(request):
     return render(request, 'index.html', {})
 
 
+def bubblegame(a):
+
+    pmate = {"0":"Cuanto es 2+2",
+            "1":"Cuanto es 2+6",
+            "2":"Cuanto es 2*2",
+            "3":"Cuanto es 2*6"           
+            }
+    rmate = {"0":[4,3,1,0],
+             "1":[8,3,1,0],
+             "2":[4,3,1,0],
+             "3":[12,3,1,0]          
+            }
+
+    database.child('users').child(a).child('preguntas').set(pmate)
+    database.child('users').child(a).child('Respuestas').set(rmate)
+
+
+
 def bubble(request):
     try:
         idtoken = request.session['uid']
@@ -66,17 +84,25 @@ def bubble(request):
     except:
         message="Tu sesión ha expirado."
         return render(request,"index.html",{"messg":message})
+    bubblegame(a)
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
-    semana = database.child('users').child(a).child('calendario').get()
+    pmate = database.child('users').child(a).child('preguntas').get()
+    rmate = database.child('users').child(a).child('Respuestas').get()
+    pmatel = []
+    rmatel = []
+    print(rmate.val())
+    for mate in pmate.each():
+        pmatel.append(mate.val())
 
-    msemana = []
+    for mate in rmate.each():
+      
+        rmatel.append(mate.val())
 
-    for sem in semana.each():
-        #print(sem.key()[2:]) #eliminando los
-        msemana.append(sem.key()[2:])
-    data = json.dumps(msemana, cls=DjangoJSONEncoder)
-    print(data)
-    return render(request, 'bubble.html', {'img':img_url,'data':data})
+    data = json.dumps(pmatel, cls=DjangoJSONEncoder)
+    data2 = json.dumps(rmate.val(), cls=DjangoJSONEncoder)
+    print(data2)
+    return render(request, 'bubble.html', {'img':img_url,'data':data,'data2':data2})
+
 
 
     
