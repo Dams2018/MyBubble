@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from pyrebase import pyrebase
 from django.contrib import auth
 from django.contrib.auth import authenticate, logout, login
+from django.core import serializers
+from django.core.serializers.json import DjangoJSONEncoder
+from django.core.serializers import serialize
+import json
 
 
   
@@ -63,7 +67,16 @@ def bubble(request):
         message="Tu sesión ha expirado."
         return render(request,"index.html",{"messg":message})
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
-    return render(request, 'bubble.html', {'img':img_url})
+    semana = database.child('users').child(a).child('calendario').get()
+
+    msemana = []
+
+    for sem in semana.each():
+        #print(sem.key()[2:]) #eliminando los
+        msemana.append(sem.key()[2:])
+    data = json.dumps(msemana, cls=DjangoJSONEncoder)
+    print(data)
+    return render(request, 'bubble.html', {'img':img_url,'data':data})
 
 
     
