@@ -8,7 +8,7 @@
 <body>
 
 <div class="card center" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap">
+  <img class="card-img-top" src="{{img}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">Titulo</h5>
     <p id="pregunta"> class="card-text"></p>
@@ -38,6 +38,7 @@
 
 
 	<script>
+		var nota=0;
 		var preguntas = {{data|safe}};
 		var respuestas ={{data2|safe}};
 jugar();
@@ -75,14 +76,16 @@ function jugar(){
 
 }
 function comprobar(){
+	
 	var respuesta = $("input[type=radio]:checked").val();
 
 	//alert(respuesta);
 	//alert(indicie_respuesta_correcta);
 	if(respuesta ==indicie_respuesta_correcta){
-    
+    nota=nota+1;
+
 		Swal.fire({
-  title: 'Custom animation with Animate.css',
+  title: 'Custom animation with Animate.css'+ nota,
   animation: false,
   customClass: {
     popup: 'animated tada'

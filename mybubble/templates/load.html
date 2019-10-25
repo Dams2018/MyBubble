@@ -9,16 +9,13 @@
 {% include "base.html" %}
 <body>
 
-<img  src="{% static 'img/logo.webp' %}" class="img-fluid w-80 center col-xs-10 col-md-8"  alt="Responsive image" >
+<img  src="{% static 'img/logo.webp' %}" class="img-fluid w-80 center col-xs-10 col-md-8 animated zoomOutUp delay-5s	"  alt="Responsive image" >
   <p><p>
 
 
     
 
-<div class="loader center espacio"></div>
-
-<marquee behavior="scroll" direction="left" scrollamount="10">Cargando Booblesito</marquee>
-<marquee behavior="scroll" direction="right" scrollamount="20"><img src="{% static 'img/kWFwiS9.gif' %}" width="130" height="100" alt="smile">Cargando BD o DB........</marquee>
+<div class="loader center espacio animated flipInY"></div>
 
 
 
@@ -28,7 +25,7 @@
 
       window.onload=timeout;
       function timeout(){
-      window.setTimeout("redirect()",8000)}
+      window.setTimeout("redirect()",5000)}
       
       function redirect(){
       window.location="{% url 'inicio' %}"
