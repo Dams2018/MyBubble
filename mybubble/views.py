@@ -375,5 +375,5 @@ def getdata(request):
 	return HttpResponse(jsondata)
 
 def base_layout(request):
-	template='base.html'
+	template='index.html'
 	return render(request,template)
