@@ -22,7 +22,7 @@ from mybubble import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path(‘’, include(‘pwa.urls’)),
+    path('', include('pwa.urls')),
     path('',include('mybubble.urls')),
     path('postsign/',views.postsign),
     path('recover/',views.recover),
