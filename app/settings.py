@@ -138,15 +138,43 @@ PWA_APP_SCOPE = '/'
 PWA_APP_ORIENTATION = 'any'
 PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
+{
+        'src': '/images/icons/icon-72x72.png',
+        'size': '72x72'
+    },
     {
-        'src': '/static/images/icon-72x72.png',
-        'sizes': '72x72'
+        'src': '/images/icons/icon-96x96.png',
+        'size': '96x96'
+    },
+    {
+        'src': '/images/icons/icon-128x128.png',
+        'size': '128x128'
+    },
+    {
+        'src': '/images/icons/icon-144x144.png',
+        'size': '144x144'
+    },
+    {
+        'src': '/images/icons/icon-152x152.png',
+        'size': '152x152'
+    },
+    {
+        'src': '/images/icons/icon-192x192.png',
+        'size': '192x192'
+    },
+    {
+        'src': '/images/icons/icon-384x384.png',
+        'size': '384x384'
+    },
+    {
+        'src': '/images/icons/icon-512x512.png',
+        'size': '512x512'
     }
 ]
 PWA_APP_SPLASH_SCREEN = [
     {
         'src': '/static/images/icons/splash-640x1136.png',
-        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)',
     }
 ]
 PWA_APP_DIR = 'ltr'
