@@ -36,6 +36,7 @@ urlpatterns = [
     path('updateDatos/',views.updateDatos, name='updateDatos'),  
     path('bubble/',views.bubble, name='bubble'),  
     
+    
 
        
     

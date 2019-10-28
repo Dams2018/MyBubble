@@ -3,8 +3,6 @@ from django.urls import path,include
 from django.contrib.auth.views import LoginView
 from .views import index,registro,recover, signIn , recuperar,updateDatos,bubble
 
-
-
 urlpatterns = [
     path('', signIn, name="index"),
     path('registro', registro, name="registro"),
@@ -15,6 +13,8 @@ urlpatterns = [
     path('recuperar', recuperar, name="recuperar"),
     path('updateDatos', updateDatos, name="updateDatos"),
     path('bubble', bubble, name="bubble"),
+    path('base_layout',views.base_layout,name='base_layout'),
+    path('getdata',views.getdata,name='getdata')
     
     
     

@@ -365,3 +365,15 @@ def updateDatos(request):
     img_url = database.child('users').child(a).child('imagen').child('url').get().val()
     print(img_url)
     return render(request, 'micuenta.html', {'nombre':name,'asyg':asyg,'img':img_url})
+
+
+
+
+def getdata(request):
+	results=feed.objects.all()
+	jsondata = serializers.serialize('json',results)
+	return HttpResponse(jsondata)
+
+def base_layout(request):
+	template='posts/base.html'
+	return render(request,template)
