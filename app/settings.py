@@ -172,6 +172,7 @@ PWA_APP_ICONS = [
         'size': '512x512'
     }
 ]
+
 PWA_APP_SPLASH_SCREEN = [
     {
         'src': '/static/images/icons/splash-640x1136.png',
@@ -214,6 +215,8 @@ PWA_APP_SPLASH_SCREEN = [
         'media': '(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)'
     }
 ]
-PWA_APP_DIR = 'auto'
+PWA_APP_DIR = 'ltr'
 PWA_APP_LANG = 'es-CL'
+
+
 
