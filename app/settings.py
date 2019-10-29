@@ -140,35 +140,35 @@ PWA_APP_START_URL = '/'
 PWA_APP_ICONS = [
 {
     
-        'src': '/static/images/icons/icon-72x72.png',
+        'src': '/static/images/icon-72x72.png',
         'size': '72x72'
     },
     {
-        'src': '/static/images/icons/icon-96x96.png',
+        'src': '/static/images/icon-96x96.png',
         'size': '96x96'
     },
     {
-        'src': '/static/images/icons/icon-128x128.png',
+        'src': '/static/images/icon-128x128.png',
         'size': '128x128'
     },
     {
-        'src': '/static/images/icons/icon-144x144.png',
+        'src': '/static/images/icon-144x144.png',
         'size': '144x144'
     },
     {
-        'src': '/static/images/icons/icon-152x152.png',
+        'src': '/static/images/icon-152x152.png',
         'size': '152x152'
     },
     {
-        'src': '/static/images/icons/icon-192x192.png',
+        'src': '/static/images/icon-192x192.png',
         'size': '192x192'
     },
     {
-        'src': '/static/images/icons/icon-384x384.png',
+        'src': '/static/images/icon-384x384.png',
         'size': '384x384'
     },
     {
-        'src': '/static/images/icons/icon-512x512.png',
+        'src': '/static/images/icon-512x512.png',
         'size': '512x512'
     }
 ]
