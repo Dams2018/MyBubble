@@ -8,10 +8,10 @@
   "display": {{ PWA_APP_DISPLAY|js }},
   "scope": {{ PWA_APP_SCOPE|js }},
   "orientation": {{ PWA_APP_ORIENTATION|js }},
-  "background_color": {{ PWA_APP_BACKGROUND_COLOR|js }},
+  "background_color": {#007BFF},
   "theme_color": {{ PWA_APP_THEME_COLOR|js }},
   "icons": {{ PWA_APP_ICONS|js }},
-
+},{
   "related_applications": [
     {
       "platform": "play",
