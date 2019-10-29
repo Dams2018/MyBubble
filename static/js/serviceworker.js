@@ -1,4 +1,5 @@
 var staticCacheName = "django-pwa-v" + new Date().getTime();
+const OFFLINE_URL = 'offline.html';
 var filesToCache = [
     '/offline.html',
     '/css/django-pwa-app.css',
