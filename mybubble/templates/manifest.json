@@ -1,9 +1,24 @@
+{% load pwa %}
+
 {
-  "name": "lol",
-  "short_name": "lol",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
-  "display": "browser",
-  "scope": "/",
-  "start_url": "/"
+  "name": {{ PWA_APP_NAME|js }},
+  "short_name": {{ PWA_APP_NAME|js }},
+  "description": {{ PWA_APP_DESCRIPTION|js }},
+  "start_url": {{ PWA_APP_START_URL|js }},
+  "display": {{ PWA_APP_DISPLAY|js }},
+  "scope": {{ PWA_APP_SCOPE|js }},
+  "orientation": {{ PWA_APP_ORIENTATION|js }},
+  "background_color": {{ PWA_APP_BACKGROUND_COLOR|js }},
+  "theme_color": {{ PWA_APP_THEME_COLOR|js }},
+  "icons": {{ PWA_APP_ICONS|js }},
+
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.example.app1",
+      "id": "com.example.app1"
+    }, {
+      "platform": "itunes",
+      "url": "https://itunes.apple.com/app/example-app1/id333333333"
+    }]
 }
