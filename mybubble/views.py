@@ -55,6 +55,7 @@ def recuperar(request):
     authe.send_password_reset_email(email)
     return render(request, 'index.html', {})
 
+# info de preguntas y respuestas
 
 def bubblegame(a):
 
@@ -75,6 +76,7 @@ def bubblegame(a):
 
 
 def bubble(request):
+    response_data = {}
     try:
         idtoken = request.session['uid']
         a = authe.get_account_info(idtoken)
@@ -90,7 +92,7 @@ def bubble(request):
     rmate = database.child('users').child(a).child('Respuestas').get()
     pmatel = []
     rmatel = []
-    print(rmate.val())
+
     for mate in pmate.each():
         pmatel.append(mate.val())
 
@@ -100,7 +102,14 @@ def bubble(request):
 
     data = json.dumps(pmatel, cls=DjangoJSONEncoder)
     data2 = json.dumps(rmate.val(), cls=DjangoJSONEncoder)
-    print(data2)
+        
+
+    title = request.POST.get('title')
+    response_data['title'] = title
+
+    print(title)
+
+
     return render(request, 'bubble.html', {'img':img_url,'data':data,'data2':data2})
 
 

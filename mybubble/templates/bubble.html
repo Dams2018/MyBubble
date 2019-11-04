@@ -85,14 +85,23 @@ function comprobar(){
     nota=nota+1;
 
 		Swal.fire({
-  title: 'Custom animation with Animate.css'+ nota,
-  animation: false,
-  customClass: {
-    popup: 'animated tada'
-  }
+  		title: nota +' Puntos',
+  		animation: false,
+  		customClass: {
+    		popup: 'animated tada'
+  		}
 })
 	}else{
-		alert("me tiro por un puente");
+		if(nota==0){
+			nota=0
+		}else{
+			nota=nota-1 
+		}
+		Swal.fire({
+  		type: 'error',
+  		title: 'Oops...'+ nota+' Puntos',
+  		text: 'Que Pena!',
+})
 	}
 	jugar();
 }
