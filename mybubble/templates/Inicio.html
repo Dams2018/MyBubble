@@ -6,12 +6,18 @@
 {% include "nav.html" %}
 
 
+<style>
+.checked {
+  color: orange;
+}
+</style>
+
+
 <body>
     <div id="espacio" class="container" >
 
 
 {% for m in asy %}
-
 
   {% if m == 'Lenguaje' %}
         <div class="card text-white bg-danger mb-3 text-center animated bounceInUp">
@@ -26,6 +32,7 @@
         <div class="card text-white bg-warning mb-3 text-center animated bounceInUp">
         <div class="card-header"> <i class="material-icons left medium">polymer</i> <a class="center">{{m}}</a></div>
     {% elif m == 'Historia' %}
+    dfdsfsd
        <div class="card text-white bg-success mb-3 text-center animated bounceInUp">
         <div class="card-header"> <i class="material-icons left medium">explore</i> <a class="center">{{m}}</a></div>
   {% else %}
@@ -45,12 +52,13 @@
 
 
 
+
+
 </body>
 
 
 
 </html>
-
 {% include "notificaciones.html" %}
 
 {% endblock content %}
